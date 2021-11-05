@@ -8,12 +8,18 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "precommit": "lint-staged",
+    "prettier": "prettier 'src/**/*.ts'",
     "generate-image-imports": "node scripts/images.js",
     "postinstall": "patch-package"
   },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
-    "patch-package": "^6.4.7",
-    "postinstall-postinstall": "^2.1.0",
     "react": "17.0.2",
     "react-native": "0.66.2",
     "react-native-gesture-handler": "^1.10.3",
@@ -30,8 +36,13 @@
     "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^26.6.3",
     "eslint": "^7.14.0",
+    "husky": "^7.0.4",
     "jest": "^26.6.3",
+    "lint-staged": "^11.2.6",
     "metro-react-native-babel-preset": "^0.66.2",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
+    "prettier": "^2.4.1",
     "react-test-renderer": "17.0.2",
     "typescript": "^3.8.3"
   },
