@@ -7,7 +7,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import {View, Text} from 'react-native-ui-lib';
-import {Assets} from '../assets';
+import {Assets} from './assets';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
